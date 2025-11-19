@@ -1,0 +1,56 @@
+body {
+font-family: Arial, sans-serif;
+background: linear-gradient(to right,  #ffb366,  #e6e6ff);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 50px;
+text-align: center;
+}
+.score-box {
+background: #16a2cc;
+color: white;
+padding: 8px 25px;
+border-radius: 6px;
+font-size: 20px;
+margin-bottom: 10px;
+}
+.circle {
+width: 90px;
+height: 90px;
+background: yellow;
+border-radius: 50%;
+border: 3px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 35px;
+font-weight: bold;
+margin: 0 auto;
+}
+button {
+background: #27ff00;
+color: black;
+font-size: 25px;
+padding: 10px 30px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+}
+button:hover {
+background: #22cc00;
+}
+#winner {
+text-align: center;
+margin-top: 25px;
+font-size: 24px;
+font-weight: bold;
+}
