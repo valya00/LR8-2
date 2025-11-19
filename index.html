@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+	<title>Гра: В кого більше число</title>
+    <link rel="stylesheet" href="css/lab8.css">
+</head>
+<body>
+<div class="container">
+<div>
+  <div class="score-box" id="userScore">User: 0</div>
+  <div class="circle" id="userNum">-</div>
+</div>
+<button id="generateBtn">Generate</button>
+<div>
+  <div class="score-box" id="compScore">Computer: 0</div>
+  <div class="circle" id="compNum">-</div>
+</div>
+<p id="winner"></p>
+</div>
+<script>
+let player= prompt("Введіть ваше ім'я");
+while(!player || player.trim() === ""){
+player = prompt("Ім’я не може бути порожнім. Введіть ще раз:");
+}
+document.getElementById("userScore").innerText = player + ": 0";
+let playerScore = 0;
+let compScore = 0;
+document.getElementById("generateBtn").onclick = function (){
+if (playerScore === 3 || compScore === 3) return;
+let userNum = Math.floor(Math.random() * 10) + 1;
+let compNum = Math.floor(Math.random() * 10) + 1;
+document.getElementById("userNum").innerText = userNum;
+document.getElementById("compNum").innerText = compNum;
+if(userNum > compNum) playerScore++;
+else if(compNum > userNum) compScore++;
+document.getElementById("userScore").innerText = player + ": " + playerScore;
+document.getElementById("compScore").innerText = "Computer: " + compScore;
+if(playerScore === 3){
+document.getElementById("winner").innerText = "🎉 " + player + " переміг!";
+}
+if (compScore === 3) {
+            document.getElementById("winner").innerText = "Комп’ютер виграв 😐";
+}
+};
+</script>
+</body>
